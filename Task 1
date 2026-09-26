@@ -1,0 +1,60 @@
+/ **
+ * GroceryManagementSystem manages Grocery inventory data using 
+ * parallel arrays.
+ *
+ * Assignement 1 - Task 1: Inventory Display
+ */
+public class GroceryManagementSystem {
+
+  /**
+   * Displays all non-empty inventory slots.
+   * The same index in each parallel array represents one grocery item.
+   *
+   * @param names array containing item names
+   * @param prices array containing item prices
+   * @param stocks array containing item stock quantities
+   */
+public static void printInventory(String[] names,
+                                  double[] prices,
+                                  int[] stocks) {
+
+  for (int i = 0; i < names.length; i++) {
+      if (names[i] != null) {
+          System.out.printf(
+              "%s - $%.2f - Stock: %d%n",
+              names[i], prices[i], stocks[i]
+          );
+      } else {
+          // Empty inventory slot; nothing is printed.
+      }
+    }
+}
+
+/**
+ * Creates the three required parallel arrays and demonstrates
+ * Task 1 by displaying the current inventory.
+ *
+ * @param args command-line arguments (not used)
+ */
+public static void main(String[] args) {
+
+  String[] itemNames = new String[10];
+  double[] itemPrices = new double[10];
+  int[] itemStocks = new int[10];
+
+  //Sample inventory data for testing Task 1.
+  itemNames[0] = "Apples";
+  itemPrices[0] = 1.99;
+  itemStocks[0] = 12;
+
+  itemNames[1] = "Bread";
+  itemPrices[1] = 3.49;
+  itemStocks[1] = 8;
+
+  itemNames[2] = "Milk";
+  itemPrices[2] = 4.25;
+  itemStocks[2] = 5;
+
+  printInventory(itemNames, itemPrices, itemStocks);
+ }
+}
