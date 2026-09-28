@@ -89,7 +89,7 @@ public static void main(String[] args) {
         System.out.print("Enter quantity to add: ");
         int amount = input.nextInt();
 
-       // restockItem(itemNames, itemStocks, target, amount);
+       restockItem(itemNames, itemStocks, target, amount);
     }
 
     else if (choice ==3)
