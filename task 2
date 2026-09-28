@@ -1,0 +1,16 @@
+public static void restockItem(String[] names, int[] stocks, String target, int quantity) {
+        boolean foundItem = false;
+        
+        for (int i = 0; i < names.length; i++) {
+            if (names[i] != null && names[i].equals(target)) {
+                stocks[i] += quantity;
+                found = true;
+                System.out.println("successfully restocked " + target + ". New stock: " + stocks[i]);
+                break;
+            }
+        }
+        
+        if (!foundItem) {
+            System.out.println("Item not found.");
+        }
+    }
