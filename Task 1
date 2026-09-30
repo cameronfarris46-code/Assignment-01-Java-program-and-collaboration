@@ -1,3 +1,4 @@
+import java.util.Scanner;
 /**
  * GroceryManagementSystem manages Grocery inventory data using 
  * parallel arrays.
@@ -33,6 +34,7 @@ public static void printInventory(String[] names,
 /**
  * Creates the three required parallel arrays and demonstrates
  * Task 1 by displaying the current inventory.
+ * Task 3 by calling the previous 2 methods.
  *
  * @param args command-line arguments (not used)
  */
@@ -55,6 +57,52 @@ public static void main(String[] args) {
   itemPrices[2] = 4.25;
   itemStocks[2] = 5;
 
-  printInventory(itemNames, itemPrices, itemStocks);
+ // printInventory(itemNames, itemPrices, itemStocks);
+
+ /*
+ * Task 3 - The User Menu 
+ * Call the methods written in the previous two tasks above based on the user's
+ * input (1 for View, 2 for Restock, 3 to Exit).
+ */
+  Scanner input = new Scanner(System.in);
+
+  while(true)
+  {
+    System.out.println(" **** THE USER MENU **** ");
+    System.out.println("\n");
+    System.out.println("1. View Inventory");
+    System.out.println("2. Restock Item");
+    System.out.println("3. Exit");
+
+    int choice = input.nextInt();
+
+    if (choice ==1)
+    {
+        printInventory(itemNames, itemPrices, itemStocks);
+    }
+
+    else if(choice ==2)
+    {
+        System.out.print("Enter item name you want to restock: ");
+        String target = input.next();
+
+        System.out.print("Enter quantity to add: ");
+        int amount = input.nextInt();
+
+        //restockItem(itemNames, itemStocks, target, amount);
+    }
+
+    else if (choice ==3)
+    {
+        System.out.println("Exiting....");
+        break;
+    }
+    else
+    {
+        System.out.println("Invalid Choice! Try Again.");
+
+    }
+    }
+    input.close();
  }
 }
