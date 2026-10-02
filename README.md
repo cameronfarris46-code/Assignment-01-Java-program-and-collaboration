@@ -1,50 +1,150 @@
-Assignment 1: Java program
-and collaboration
-CS3354
-This is a group assignment.
-You have been randomly assigned to a team on Canvas.
-Contact your team members and collaborate to complete this program.
-To collaborate with the code, a Github repository must be created and the other team
-members must be added as collaborators.
-Objective
-Collaborate as a team to build a grocery management system using parallel arrays. You will
-manage data across multiple arrays where the same index refers to the same item.
-Team Roles & Git Workflow
-Each student must create their own branch in Git, perform their task, and then merge it into the
-main branch.
-Tasks
-The Task: Parallel Array Architecture
-You will maintain the following data across three arrays in your main method:
-• String[] itemNames = new String[10];
-• double[] itemPrices = new double[10];
-• int[] itemStocks = new int[10];
-Task 1: Inventory Display
-Branch: feature-display
-Method: public static void printInventory(String[] names, double[] prices, int[] stocks)
-Logic: Use a for loop to iterate through the arrays.
-Requirement: Use an if-else statement inside the loop to only print slots that aren't empty
-(e.g., if (names[i] != null)).
-Task 2: Restock & Search
-Branch: feature-restock
-Method: public static void restockItem(String[] names, int[] stocks, String target, int amount)
-Logic: Use a loop to find the target name. If found, add the amount to that index in the stocks
-array.
-Requirement: If the item isn't found after checking the whole loop, print "Item not found."
-Task 3: The User Menu
-Branch: feature-menu
-Logic: In the main method, use a Scanner and a while(true) loop to create a menu.
-Integration: Call the methods written in the previous two tasks above based on the user's
-input (1 for View, 2 for Restock, 3 to Exit).
-Additional requirements
-Documentation
-The program class must has an appropriate javadoc comment.
-Each method in the class must has an appropriate javadoc comment.
-Generate the javadoc documentation and store in a docs/ folder within your project folder.
-Submission
-Submit the URL to your GitHub repository.
-Grading
-To grade your project, please add Teaching Assistant’s email as your collaborator of this
-project.
-Note
-Two (2) more activities related to this assignment will be posted. In these assignments, you will
-evaluate your peers collaboration.
+# Grocery Management System
+
+## CS 3354 - Assignment 1
+
+This project is a Java-based Grocery Management System developed as a team assignment for CS 3354. The purpose of the project is to practice Java programming, parallel arrays, methods, loops, user input, documentation, and collaboration using Git and GitHub.
+
+## Project Description
+
+The Grocery Management System stores grocery inventory information using three parallel arrays:
+
+- `String[] itemNames` stores item names.
+- `double[] itemPrices` stores item prices.
+- `int[] itemStocks` stores the quantity of each item in stock.
+
+The same index in each array represents the same grocery item.
+
+For example, the name, price, and stock stored at index `0` all belong to the same item.
+
+## Program Features
+
+The program provides a menu with the following options:
+
+1. **View Inventory** - Displays all non-empty inventory items along with their prices and current stock quantities.
+2. **Restock Item** - Searches for an item by name and adds a specified quantity to its current stock.
+3. **Exit** - Ends the program.
+
+If the user attempts to restock an item that does not exist, the program displays:
+
+```text
+Item not found.
+```
+
+## Methods
+
+### `printInventory()`
+
+```java
+public static void printInventory(String[] names,
+                                  double[] prices,
+                                  int[] stocks)
+```
+
+Iterates through the parallel arrays and displays the name, price, and stock quantity for each non-empty inventory slot.
+
+### `restockItem()`
+
+```java
+public static void restockItem(String[] names,
+                               int[] stocks,
+                               String target,
+                               int amount)
+```
+
+Searches the inventory for the specified item. If the item is found, the requested amount is added to its stock quantity. If the item cannot be found, the program prints `Item not found.`
+
+## How to Compile and Run
+
+### Requirements
+
+- Java Development Kit (JDK)
+- Terminal or command prompt
+
+### Compile
+
+From the project directory, run:
+
+```bash
+javac GroceryManagementSystem.java
+```
+
+### Run
+
+After compilation, run:
+
+```bash
+java GroceryManagementSystem
+```
+
+The program will display:
+
+```text
+**** THE USER MENU ****
+
+1. View Inventory
+2. Restock Item
+3. Exit
+```
+
+Enter the number corresponding to the desired option.
+
+## Javadoc Documentation
+
+Javadoc documentation for the project is stored in the [`docs`](docs/) directory.
+
+The main Javadoc page can be found here:
+
+[`docs/index.html`](docs/index.html)
+
+## UML Class Diagram
+
+The UML class diagram for the Grocery Management System is shown below:
+
+![Grocery Management System UML Diagram](images/uml-diagram.png)
+
+## Program Screenshots
+
+### User Menu
+
+![User Menu](screenshots/menu.png)
+
+### Inventory Display
+
+![Inventory Display](screenshots/inventory.png)
+
+### Restocking an Item
+
+![Restock Item](screenshots/restock.png)
+
+### Item Not Found
+
+![Item Not Found](screenshots/item-not-found.png)
+
+## Team Contributions
+
+- **Cameron Farris** - Created and organized the GitHub repository, added team members as collaborators, coordinated the project, worked on Task 1 (Inventory Display), and generated the final Javadoc documentation..
+- **Jason Wright** - Worked as part of the team on the assignment and was assigned to Task 2 (Restock & Search).
+- **Aagya Bhandari** - Worked as part of the team and was assigned to Task 3 (User Menu).
+- **Jose Navarro** - Worked on Task 3 (User Menu) and contributed his implementation to the project.
+- **Alibek Makhkamov** - Worked on Task 2 (Restock & Search), created the `integration-docs` branch, and worked on final Javadoc generation and program testing.
+
+## GitHub Collaboration
+
+The project was developed collaboratively using Git and GitHub. Team members worked on individual branches and merged their work into the main branch.
+
+## Project Structure
+
+```text
+Assignment-01-Java-program-and-collaboration/
+├── GroceryManagementSystem.java
+├── README.md
+├── docs/
+│   └── Generated Javadoc documentation
+├── images/
+│   └── uml-diagram.png
+└── screenshots/
+    ├── menu.png
+    ├── inventory.png
+    ├── restock.png
+    └── item-not-found.png
+```
