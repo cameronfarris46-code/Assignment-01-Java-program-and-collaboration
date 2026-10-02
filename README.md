@@ -122,7 +122,7 @@ The UML class diagram for the Grocery Management System is shown below:
 
 ## Team Contributions
 
-- **Cameron Farris** - Created and organized the GitHub repository, added team members as collaborators, coordinated the project, worked on Task 1 (Inventory Display), and generated the final Javadoc documentation..
+- **Cameron Farris** - Created and organized the GitHub repository, added team members as collaborators, coordinated task assignments and team communication, completed Task 1 (Inventory Display), helped integrate and verify the completed program on the main branch, generated the final Javadoc documentation and added it to the `docs/` folder, created the UML class diagram, created and organized the program execution screenshots, and updated the README with the project description, program features, compilation and execution instructions, documentation, UML diagram, screenshots, and team contributions.
 - **Jason Wright** - Worked as part of the team on the assignment and was assigned to Task 2 (Restock & Search).
 - **Aagya Bhandari** - Worked as part of the team and was assigned to Task 3 (User Menu).
 - **Jose Navarro** - Worked on Task 3 (User Menu) and contributed his implementation to the project.
